@@ -79,8 +79,7 @@ if ($text == 'はい') {
             "text" => "そのほか"
           ]
       ]
-    ]
-  ];
+    ];
 } else if ($text == '他の事') {
   $response_format_text = [
     "type" => "template",
