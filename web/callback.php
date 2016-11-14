@@ -16,27 +16,27 @@ if($type != "text"){
 if ($text == 'はい') {
   $response_format_text = [
     "type" => "template",
-    "altText" => "こちらの事項ですか?",
+    "altText" => "主訴はどれですか?",
     "template" => [
       "type" => "buttons",
       "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
-      "title" => "よくある質問",
-      "text" => "こちらですか?",
+      "title" => "主訴はどれですか?",
+      "text" => "下から選択してください",
       "actions" => [
           [
             "type" => "message",
-            "label" => "会員登録・ログイン方法",
-            "text" => "会員登録"
+            "label" => "頭痛",
+            "text" => "頭痛"
           ],
           [
             "type" => "message",
-            "label" => "リーダーアプリ・コンテンツ",
-            "text" => "リーダーアプリ"
+            "label" => "失神",
+            "text" => "失神"
           ],
           [
             "type" => "message",
-            "label" => "購入方法",
-            "text" => "購入方法"
+            "label" => "意識障害",
+            "text" => "意識障害"
           ],
           [
             "type" => "message",
@@ -48,39 +48,7 @@ if ($text == 'はい') {
   ];
 } else if ($text == 'いいえ') {
   exit;
-} else if ($text == '会員登録') {
-  $response_format_text = [
-    "type" => "template",
-    "altText" => "こちらの事項ですか?",
-    "template" => [
-      "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
-      "title" => "会員登録・ログイン方法",
-      "text" => "こちらですか?",
-      "actions" => [
-          [
-            "type" => "message",
-            "label" => "会員登録したのに確認メールが届かない",
-            "text" => "確認メール"
-          ],
-          [
-            "type" => "message",
-            "label" => "携帯メールの受信設定の方法がわからない",
-            "text" => "携帯メール"
-          ],
-          [
-            "type" => "message",
-            "label" => "パスワードを忘れた／パスワードを変更したい",
-            "text" => "パスワード"
-          ],
-          [
-            "type" => "message",
-            "label" => "違うやつ",
-            "text" => "そのほか"
-          ]
-      ]
-    ];
-} else if ($text == '他の事') {
+} else if ($text == '頭痛') {
   $response_format_text = [
     "type" => "template",
     "altText" => "mediLink",
@@ -88,81 +56,141 @@ if ($text == 'はい') {
       "type" => "carousel",
       "columns" => [
           [
-            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-1.jpg",
-            "title" => "mediLinkとは",
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/mail.png",
+            "title" => "主訴1",
             "text" => "こちらですか？",
             "actions" => [
               [
-                  "type" => "postback",
-                  "label" => "見る",
-                  "data" => "action=rsv&itemid=111"
+                  "type" => "message",
+                  "label" => "突然の激しい頭痛",
+                  "text" => "突然の激しい頭痛"
               ],
               [
-                  "type" => "uri",
-                  "label" => "問い合わせる（ブラウザ起動）",
-                  "uri" => "https://www.medilink-study.com/contact/"
+                  "type" => "message",
+                  "label" => "突然の頭痛",
+                  "text" => "突然の頭痛"
               ],
               [
-                  "type" => "uri",
-                  "label" => "詳しく見る（ブラウザ起動）",
-                  "uri" => "https://www.medilink-study.com/user_data/about.php"
+                  "type" => "message",
+                  "label" => "発熱を伴う頭痛",
+                  "text" => "発熱を伴う頭痛"
               ]
             ]
           ],
           [
-            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-2.jpg",
-            "title" => "mediLinkの構成",
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/jushin.png",
+            "title" => "主訴2",
             "text" => "それともこちら？（２つ目）",
             "actions" => [
               [
-                  "type" => "postback",
-                  "label" => "見る",
-                  "data" => "action=rsv&itemid=222"
+                  "type" => "message",
+                  "label" => "突然の頭痛/片側性の激しい眼痛",
+                  "text" => "片側性の激しい眼痛"
               ],
               [
-                  "type" => "uri",
-                  "label" => "問い合わせる（ブラウザ起動）",
-                  "uri" => "https://www.medilink-study.com/contact/"
+                  "type" => "message",
+                  "label" => "側頭部の圧痛を伴う拍動性の頭痛",
+                  "text" => "側頭部の圧痛を伴う拍動性の頭痛"
               ],
               [
-                  "type" => "uri",
-                  "label" => "詳しく見る（ブラウザ起動）",
-                  "uri" => "https://www.medilink-study.com/user_data/about.php"
+                  "type" => "message",
+                  "label" => "締め付けられる感じの頭痛",
+                  "text" => "締め付けられる感じの頭痛"
               ]
             ]
           ],
           [
-            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-3.jpg",
-            "title" => "mediLinkアプリ 複数端末でのご利用について",
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/password.jpg",
+            "title" => "主訴3",
             "text" => "はたまたこちら？（３つ目）",
             "actions" => [
               [
-                  "type" => "postback",
-                  "label" => "見る",
-                  "data" => "action=rsv&itemid=222"
+                  "type" => "message",
+                  "label" => "発作反復性で片側優位な拍動性頭痛",
+                  "text" => "発作反復性で片側優位な拍動性頭痛"
               ],
               [
-                  "type" => "uri",
-                  "label" => "問い合わせる（ブラウザ起動）",
-                  "uri" => "https://www.medilink-study.com/contact/"
+                  "type" => "message",
+                  "label" => "片側眼周囲から側頭部にかけての高度な頭痛",
+                  "text" => "片側眼周囲から側頭部にかけての高度な頭痛"
               ],
               [
-                  "type" => "uri",
-                  "label" => "詳しく見る（ブラウザ起動）",
-                  "uri" => "https://www.medilink-study.com/user_data/about.php"
+                  "type" => "message",
+                  "label" => "前屈で悪化する頭痛",
+                  "text" => "前屈で悪化する頭痛"
               ]
             ]
           ]
       ]
     ]
   ];
-} else {
+//突然の激しい頭痛の患者像
+} else if ($text == '突然の激しい頭痛') {
   $response_format_text = [
     "type" => "template",
-    "altText" => "こんにちわ 何かご用ですか？（はい／いいえ）",
+    "altText" => "患者像は？
+			・40～60代男性
+			・高血圧
+			（はい／いいえ）",
     "template" => [
         "type" => "confirm",
-        "text" => "こんにちわ 何かご用ですか？",
+        "text" => "患者像は？",
+        "actions" => [
+            [
+              "type" => "message",
+              "label" => "はい",
+              "text" => "突然の激しい頭痛の患者像(はい)"
+            ],
+            [
+              "type" => "message",
+              "label" => "いいえ",
+              "text" => "突然の激しい頭痛の患者像(いいえ)"
+            ]
+        ]
+    ]
+  ];
+//付随する症状
+}  else if ($text == '突然の激しい頭痛の患者像(はい)') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "付随する症状？
+			・悪心/嘔吐
+			・意識障害
+（はい／いいえ）",
+    "template" => [
+        "type" => "confirm",
+        "text" => "突然の激しい頭痛の付随する症状？",
+        "actions" => [
+            [
+              "type" => "message",
+              "label" => "突然の激しい頭痛の付随する症状(はい)",
+              "text" => "突然の激しい頭痛の付随する症状(はい)"
+            ],
+            [
+              "type" => "message",
+              "label" => "突然の激しい頭痛の付随する症状(いいえ)",
+              "text" => "突然の激しい頭痛の付随する症状(いいえ)"
+            ]
+        ]
+    ]
+  ];
+//インプレッション
+} else if ($text == '突然の激しい頭痛の付随する症状(はい)') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionはくも膜下出血です。詳細は「レビューブック内科・外科2016-2017」のJ-15を参照ください。
+				https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+
+
+//最初のレスポンス
+}  else if ($text == '質問') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "インプレッションが知りたい？（はい／いいえ）",
+    "template" => [
+        "type" => "confirm",
+        "text" => "インプレッションが知りたい？",
         "actions" => [
             [
               "type" => "message",
