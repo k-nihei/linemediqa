@@ -135,8 +135,8 @@ if ($text == 'はい') {
     "template" => [
         "type" => "confirm",
         "text" => "患者像は？
-			・40～60代男性
-			・高血圧",
+・40～60代男性
+・高血圧",
         "actions" => [
             [
               "type" => "message",
@@ -156,14 +156,14 @@ if ($text == 'はい') {
   $response_format_text = [
     "type" => "template",
     "altText" => "付随する症状？
-			・悪心/嘔吐
-			・意識障害
+・悪心/嘔吐
+・意識障害
 （はい／いいえ）",
     "template" => [
         "type" => "confirm",
         "text" => "突然の激しい頭痛の付随する症状？
-			・悪心/嘔吐
-			・意識障害",
+・悪心/嘔吐
+・意識障害",
         "actions" => [
             [
               "type" => "message",
@@ -183,7 +183,7 @@ if ($text == 'はい') {
 	  $response_format_text = [
 		    	"type" => "text",
 			"text" => "1st Impressionはくも膜下出血です。詳細は「レビューブック内科・外科2016-2017」のJ-15を参照ください。
-				https://www.medilink-study.com/products/detail.php?product_id=12"
+https://www.medilink-study.com/products/detail.php?product_id=12"
 			];
 
 
