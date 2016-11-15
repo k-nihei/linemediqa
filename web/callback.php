@@ -19,7 +19,7 @@ if ($text == 'はい') {
     "altText" => "主訴はどれですか?",
     "template" => [
       "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/rev.png",
       "title" => "主訴はどれですか?",
       "text" => "下から選択してください",
       "actions" => [
