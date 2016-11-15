@@ -56,7 +56,7 @@ if ($text == 'はい') {
       "type" => "carousel",
       "columns" => [
           [
-
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
             "title" => "主訴1",
             "text" => "こちらですか？",
             "actions" => [
@@ -186,7 +186,7 @@ if ($text == 'はい') {
 https://www.medilink-study.com/products/detail.php?product_id=12"
 			];
 //最初のレスポンス
-}  else if ($text == '質問') {
+}  else if ($text == '質問' or $text == 'インプレッション' or $text == 'インプレッションが知りたい') {
   $response_format_text = [
     "type" => "template",
     "altText" => "インプレッションが知りたい？（はい／いいえ）",
