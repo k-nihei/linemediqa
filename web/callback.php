@@ -182,7 +182,7 @@ if ($text == 'はい') {
 } else if ($text == '突然の激しい頭痛の付随する症状(はい)') {
 	  $response_format_text = [
 		    	"type" => "text",
-			"text" => "1st Impressionはくも膜下出血です。詳細は「レビューブック内科・外科2016-2017」のJ-15を参照ください。
+			"text" => "1st Impressionは【くも膜下出血】です。詳細は「レビューブック内科・外科2016-2017」のJ-15を参照ください。
 https://www.medilink-study.com/products/detail.php?product_id=12"
 			];
 //突然の激しい頭痛の患者像
@@ -247,7 +247,7 @@ https://www.medilink-study.com/products/detail.php?product_id=12"
 } else if ($text == '突然の頭痛の付随する症状(はい)') {
 	  $response_format_text = [
 		    	"type" => "text",
-			"text" => "1st Impressionは⋆脳内出血です。詳細は「レビューブック内科・外科2016-2017」のJ-13を参照ください。
+			"text" => "1st Impressionは【脳内出血】です。詳細は「レビューブック内科・外科2016-2017」のJ-13を参照ください。
 https://www.medilink-study.com/products/detail.php?product_id=12"
 			];
 //突然の激しい頭痛の患者像ここまで
