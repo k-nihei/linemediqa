@@ -19,7 +19,7 @@ if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い')　 {
     "altText" => "頭痛",
     "template" => [
       "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
       "title" => "頭痛",
       "text" => "どんな感じですか?",
       "actions" => [
@@ -55,7 +55,7 @@ if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い')　 {
     "altText" => "突然の激しい頭痛",
     "template" => [
       "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
       "title" => "突然の激しい頭痛",
       "text" => "患者像は?",
       "actions" => [
@@ -91,7 +91,7 @@ if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い')　 {
     "altText" => "発熱を伴う頭痛",
     "template" => [
       "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
       "title" => "発熱を伴う頭痛",
       "text" => "患者像は?",
       "actions" => [
@@ -127,7 +127,7 @@ if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い')　 {
     "altText" => "片側性の激しい頭痛",
     "template" => [
       "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
       "title" => "片側性の激しい頭痛",
       "text" => "患者像は?",
       "actions" => [
@@ -163,7 +163,7 @@ if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い')　 {
     "altText" => "側頭部の圧縮",
     "template" => [
       "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
       "title" => "側頭部の圧縮",
       "text" => "患者像は?",
       "actions" => [
@@ -199,7 +199,7 @@ if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い')　 {
     "altText" => "4060高血圧",
     "template" => [
       "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
       "title" => "4060高血圧",
       "text" => "付随する症状は?",
       "actions" => [
@@ -235,7 +235,7 @@ if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い')　 {
     "altText" => "患者像無",
     "template" => [
       "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
       "title" => "患者像無",
       "text" => "付随する症状は?",
       "actions" => [
@@ -271,7 +271,7 @@ if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い')　 {
     "altText" => "中年以降女性",
     "template" => [
       "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
       "title" => "中年以降女性",
       "text" => "付随する症状は?",
       "actions" => [
@@ -307,7 +307,7 @@ if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い')　 {
     "altText" => "50歳以上女性",
     "template" => [
       "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
       "title" => "50歳以上女性",
       "text" => "付随する症状は?",
       "actions" => [
