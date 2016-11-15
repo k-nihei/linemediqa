@@ -56,7 +56,7 @@ if ($text == 'はい') {
       "type" => "carousel",
       "columns" => [
           [
-            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
+
             "title" => "主訴1",
             "text" => "こちらですか？",
             "actions" => [
