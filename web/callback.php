@@ -56,7 +56,7 @@ if ($text == 'はい') {
       "type" => "carousel",
       "columns" => [
           [
-            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/mail.png",
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
             "title" => "主訴1",
             "text" => "こちらですか？",
             "actions" => [
@@ -78,7 +78,7 @@ if ($text == 'はい') {
             ]
           ],
           [
-            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/jushin.png",
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
             "title" => "主訴2",
             "text" => "それともこちら？（２つ目）",
             "actions" => [
@@ -100,7 +100,7 @@ if ($text == 'はい') {
             ]
           ],
           [
-            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/password.jpg",
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
             "title" => "主訴3",
             "text" => "はたまたこちら？（３つ目）",
             "actions" => [
