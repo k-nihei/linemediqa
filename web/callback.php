@@ -252,27 +252,6 @@ https://www.medilink-study.com/products/detail.php?product_id=12"
 			];
 //突然の激しい頭痛の患者像ここまで
 //最初のレスポンス
-}  else if ($text == 'インプレッション') {
-  $response_format_text = [
-    "type" => "template",
-    "altText" => "インプレッションが知りたい？（はい／いいえ）",
-    "template" => [
-        "type" => "confirm",
-        "text" => "インプレッションが知りたい？",
-        "actions" => [
-            [
-              "type" => "message",
-              "label" => "はい",
-              "text" => "はい"
-            ],
-            [
-              "type" => "message",
-              "label" => "いいえ",
-              "text" => "いいえ"
-            ]
-        ]
-    ]
-  ];
 }  else if ($text == '質問') {
   $response_format_text = [
     "type" => "template",
