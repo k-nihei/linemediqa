@@ -1,208 +1,383 @@
 <?php
 $accessToken = getenv('LINE_CHANNEL_ACCESS_TOKEN');
-//ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‹ã‚‰ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å–å¾—
+//ƒ†[ƒU[‚©‚ç‚ÌƒƒbƒZ[ƒWŽæ“¾
 $json_string = file_get_contents('php://input');
 $jsonObj = json_decode($json_string);
 $type = $jsonObj->{"events"}[0]->{"message"}->{"type"};
-//ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å–å¾—
+//ƒƒbƒZ[ƒWŽæ“¾
 $text = $jsonObj->{"events"}[0]->{"message"}->{"text"};
-//ReplyTokenå–å¾—
+//ReplyTokenŽæ“¾
 $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
-//ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ä»¥å¤–ã®ã¨ãã¯ä½•ã‚‚è¿”ã•ãšçµ‚äº†
+//ƒƒbƒZ[ƒWˆÈŠO‚Ì‚Æ‚«‚Í‰½‚à•Ô‚³‚¸I—¹
 if($type != "text"){
 	exit;
 }
-//è¿”ä¿¡ãƒ‡ãƒ¼ã‚¿ä½œæˆ
-if ($text == 'ã¯ã„') {
+//ƒŒƒXƒ|ƒ“ƒXƒf[ƒ^ì¬
+if ($text == '“ª’É' or $text == '“ª‚ª‚¢‚½‚¢' or $text == '“ª‚ª’É‚¢')@ {
   $response_format_text = [
     "type" => "template",
-    "altText" => "ä¸»è¨´ã¯ã©ã‚Œã§ã™ã‹?",
+    "altText" => "“ª’É",
     "template" => [
       "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/rev.png",
-      "title" => "ä¸»è¨´ã¯ã©ã‚Œã§ã™ã‹?",
-      "text" => "ä¸‹ã‹ã‚‰é¸æŠžã—ã¦ãã ã•ã„",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "title" => "“ª’É",
+      "text" => "‚Ç‚ñ‚ÈŠ´‚¶‚Å‚·‚©?",
       "actions" => [
           [
             "type" => "message",
-            "label" => "é ­ç—›",
-            "text" => "é ­ç—›"
+            "label" => "“Ë‘R‚ÌŒƒ‚µ‚¢“ª’É",
+            "text" => "“Ë‘R‚ÌŒƒ‚µ‚¢“ª’É"
           ],
           [
             "type" => "message",
-            "label" => "å¤±ç¥ž",
-            "text" => "å¤±ç¥ž"
+            "label" => "”­”M‚ð”º‚¤“ª’É",
+            "text" => "”­”M‚ð”º‚¤“ª’É"
           ],
           [
             "type" => "message",
-            "label" => "æ„è­˜éšœå®³",
-            "text" => "æ„è­˜éšœå®³"
+            "label" => "•Ð‘¤«‚ÌŒƒ‚µ‚¢“ª’É",
+            "text" => "•Ð‘¤«‚ÌŒƒ‚µ‚¢“ª’É"
           ],
           [
             "type" => "message",
-            "label" => "é•ã†ã‚„ã¤",
-            "text" => "ä»–ã®äº‹"
+            "label" => "‘¤“ª•”‚Ìˆ³k",
+            "text" => "‘¤“ª•”‚Ìˆ³k"
           ]
       ]
     ]
   ];
-} else if ($text == 'ã„ã„ãˆ') {
+} else if ($text == '‚¢‚¢‚¦') {
   exit;
-} else if ($text == 'é ­ç—›') {
+//“Ë‘R‚ÌŒƒ‚µ‚¢“ª’É
+} else if ($text == '“Ë‘R‚ÌŒƒ‚µ‚¢“ª’É') {
   $response_format_text = [
     "type" => "template",
-    "altText" => "mediLink",
+    "altText" => "“Ë‘R‚ÌŒƒ‚µ‚¢“ª’É",
     "template" => [
-      "type" => "carousel",
-      "columns" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "title" => "“Ë‘R‚ÌŒƒ‚µ‚¢“ª’É",
+      "text" => "Š³ŽÒ‘œ‚Í?",
+      "actions" => [
           [
-            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
-            "title" => "ä¸»è¨´1",
-            "text" => "ã“ã¡ã‚‰ã§ã™ã‹ï¼Ÿ",
-            "actions" => [
-              [
-                  "type" => "message",
-                  "label" => "çªç„¶ã®æ¿€ã—ã„é ­ç—›",
-                  "text" => "çªç„¶ã®æ¿€ã—ã„é ­ç—›"
-              ],
-              [
-                  "type" => "message",
-                  "label" => "çªç„¶ã®é ­ç—›",
-                  "text" => "çªç„¶ã®é ­ç—›"
-              ],
-              [
-                  "type" => "message",
-                  "label" => "ç™ºç†±ã‚’ä¼´ã†é ­ç—›",
-                  "text" => "ç™ºç†±ã‚’ä¼´ã†é ­ç—›"
-              ]
-            ]
+            "type" => "message",
+            "label" => "40`60‘ã/‚ŒŒˆ³",
+            "text" => "4060‚ŒŒˆ³"
           ],
           [
-            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
-            "title" => "ä¸»è¨´2",
-            "text" => "ãã‚Œã¨ã‚‚ã“ã¡ã‚‰ï¼Ÿï¼ˆï¼’ã¤ç›®ï¼‰",
-            "actions" => [
-              [
-                  "type" => "message",
-                  "label" => "çªç„¶ã®é ­ç—›/ç‰‡å´æ€§ã®æ¿€ã—ã„çœ¼ç—›",
-                  "text" => "ç‰‡å´æ€§ã®æ¿€ã—ã„çœ¼ç—›"
-              ],
-              [
-                  "type" => "message",
-                  "label" => "å´é ­éƒ¨ã®åœ§ç—›ã‚’ä¼´ã†æ‹å‹•æ€§ã®é ­ç—›",
-                  "text" => "å´é ­éƒ¨ã®åœ§ç—›ã‚’ä¼´ã†æ‹å‹•æ€§ã®é ­ç—›"
-              ],
-              [
-                  "type" => "message",
-                  "label" => "ç· ã‚ä»˜ã‘ã‚‰ã‚Œã‚‹æ„Ÿã˜ã®é ­ç—›",
-                  "text" => "ç· ã‚ä»˜ã‘ã‚‰ã‚Œã‚‹æ„Ÿã˜ã®é ­ç—›"
-              ]
-            ]
+            "type" => "message",
+            "label" => "Š³ŽÒ‘œ–³‚µ",
+            "text" => "Š³ŽÒ‘œ–³‚µ"
           ],
           [
-            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
-            "title" => "ä¸»è¨´3",
-            "text" => "ã¯ãŸã¾ãŸã“ã¡ã‚‰ï¼Ÿï¼ˆï¼“ã¤ç›®ï¼‰",
-            "actions" => [
-              [
-                  "type" => "message",
-                  "label" => "ç™ºä½œåå¾©æ€§ã§ç‰‡å´å„ªä½ãªæ‹å‹•æ€§é ­ç—›",
-                  "text" => "ç™ºä½œåå¾©æ€§ã§ç‰‡å´å„ªä½ãªæ‹å‹•æ€§é ­ç—›"
-              ],
-              [
-                  "type" => "message",
-                  "label" => "ç‰‡å´çœ¼å‘¨å›²ã‹ã‚‰å´é ­éƒ¨ã«ã‹ã‘ã¦ã®é«˜åº¦ãªé ­ç—›",
-                  "text" => "ç‰‡å´çœ¼å‘¨å›²ã‹ã‚‰å´é ­éƒ¨ã«ã‹ã‘ã¦ã®é«˜åº¦ãªé ­ç—›"
-              ],
-              [
-                  "type" => "message",
-                  "label" => "å‰å±ˆã§æ‚ªåŒ–ã™ã‚‹é ­ç—›",
-                  "text" => "å‰å±ˆã§æ‚ªåŒ–ã™ã‚‹é ­ç—›"
-              ]
-            ]
+            "type" => "message",
+            "label" => "’†”NˆÈ~‚Ì—«",
+            "text" => "’†”NˆÈ~‚Ì—«"
+          ],
+          [
+            "type" => "message",
+            "label" => "50ÎˆÈã‚Ì—«",
+            "text" => "50ÎˆÈã‚Ì—«"
           ]
       ]
     ]
   ];
-//çªç„¶ã®æ¿€ã—ã„é ­ç—›ã®æ‚£è€…åƒ
-} else if ($text == 'çªç„¶ã®æ¿€ã—ã„é ­ç—›') {
+//“Ë‘R‚ÌŒƒ‚µ‚¢“ª’É
+
+//”­”M‚ð”º‚¤“ª’É
+} else if ($text == '”­”M‚ð”º‚¤“ª’É') {
   $response_format_text = [
     "type" => "template",
-    "altText" => "æ‚£è€…åƒã¯ï¼Ÿ
-			ãƒ»40ï½ž60ä»£ç”·æ€§
-			ãƒ»é«˜è¡€åœ§
-			ï¼ˆã¯ã„ï¼ã„ã„ãˆï¼‰",
+    "altText" => "”­”M‚ð”º‚¤“ª’É",
     "template" => [
-        "type" => "confirm",
-        "text" => "æ‚£è€…åƒã¯ï¼Ÿ
-ãƒ»40ï½ž60ä»£ç”·æ€§
-ãƒ»é«˜è¡€åœ§",
-        "actions" => [
-            [
-              "type" => "message",
-              "label" => "ã¯ã„",
-              "text" => "çªç„¶ã®æ¿€ã—ã„é ­ç—›ã®æ‚£è€…åƒ(ã¯ã„)"
-            ],
-            [
-              "type" => "message",
-              "label" => "ã„ã„ãˆ",
-              "text" => "çªç„¶ã®æ¿€ã—ã„é ­ç—›ã®æ‚£è€…åƒ(ã„ã„ãˆ)"
-            ]
-        ]
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "title" => "”­”M‚ð”º‚¤“ª’É",
+      "text" => "Š³ŽÒ‘œ‚Í?",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "40`60‘ã/‚ŒŒˆ³",
+            "text" => "4060‚ŒŒˆ³"
+          ],
+          [
+            "type" => "message",
+            "label" => "Š³ŽÒ‘œ–³‚µ",
+            "text" => "Š³ŽÒ‘œ–³‚µ"
+          ],
+          [
+            "type" => "message",
+            "label" => "’†”NˆÈ~‚Ì—«",
+            "text" => "’†”NˆÈ~‚Ì—«"
+          ],
+          [
+            "type" => "message",
+            "label" => "50ÎˆÈã‚Ì—«",
+            "text" => "50ÎˆÈã‚Ì—«"
+          ]
+      ]
     ]
   ];
-//ä»˜éšã™ã‚‹ç—‡çŠ¶
-}  else if ($text == 'çªç„¶ã®æ¿€ã—ã„é ­ç—›ã®æ‚£è€…åƒ(ã¯ã„)') {
+//”­”M‚ð”º‚¤“ª’É
+
+//•Ð‘¤«‚ÌŒƒ‚µ‚¢“ª’É
+} else if ($text == '•Ð‘¤«‚ÌŒƒ‚µ‚¢“ª’É') {
   $response_format_text = [
     "type" => "template",
-    "altText" => "ä»˜éšã™ã‚‹ç—‡çŠ¶ï¼Ÿ
-ãƒ»æ‚ªå¿ƒ/å˜”å
-ãƒ»æ„è­˜éšœå®³
-ï¼ˆã¯ã„ï¼ã„ã„ãˆï¼‰",
+    "altText" => "•Ð‘¤«‚ÌŒƒ‚µ‚¢“ª’É",
     "template" => [
-        "type" => "confirm",
-        "text" => "çªç„¶ã®æ¿€ã—ã„é ­ç—›ã®ä»˜éšã™ã‚‹ç—‡çŠ¶ï¼Ÿ
-ãƒ»æ‚ªå¿ƒ/å˜”å
-ãƒ»æ„è­˜éšœå®³",
-        "actions" => [
-            [
-              "type" => "message",
-              "label" => "ã¯ã„",
-              "text" => "çªç„¶ã®æ¿€ã—ã„é ­ç—›ã®ä»˜éšã™ã‚‹ç—‡çŠ¶(ã¯ã„)"
-            ],
-            [
-              "type" => "message",
-              "label" => "ã„ã„ãˆ",
-              "text" => "çªç„¶ã®æ¿€ã—ã„é ­ç—›ã®ä»˜éšã™ã‚‹ç—‡çŠ¶(ã„ã„ãˆ)"
-            ]
-        ]
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "title" => "•Ð‘¤«‚ÌŒƒ‚µ‚¢“ª’É",
+      "text" => "Š³ŽÒ‘œ‚Í?",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "40`60‘ã/‚ŒŒˆ³",
+            "text" => "4060‚ŒŒˆ³"
+          ],
+          [
+            "type" => "message",
+            "label" => "Š³ŽÒ‘œ–³‚µ",
+            "text" => "Š³ŽÒ‘œ–³‚µ"
+          ],
+          [
+            "type" => "message",
+            "label" => "’†”NˆÈ~‚Ì—«",
+            "text" => "’†”NˆÈ~‚Ì—«"
+          ],
+          [
+            "type" => "message",
+            "label" => "50ÎˆÈã‚Ì—«",
+            "text" => "50ÎˆÈã‚Ì—«"
+          ]
+      ]
     ]
   ];
-//ã‚¤ãƒ³ãƒ—ãƒ¬ãƒƒã‚·ãƒ§ãƒ³
-} else if ($text == 'çªç„¶ã®æ¿€ã—ã„é ­ç—›ã®ä»˜éšã™ã‚‹ç—‡çŠ¶(ã¯ã„)') {
+//•Ð‘¤«‚ÌŒƒ‚µ‚¢“ª’É
+
+//‘¤“ª•”‚Ìˆ³k
+} else if ($text == '‘¤“ª•”‚Ìˆ³k') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "‘¤“ª•”‚Ìˆ³k",
+    "template" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "title" => "‘¤“ª•”‚Ìˆ³k",
+      "text" => "Š³ŽÒ‘œ‚Í?",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "40`60‘ã/‚ŒŒˆ³",
+            "text" => "4060‚ŒŒˆ³"
+          ],
+          [
+            "type" => "message",
+            "label" => "Š³ŽÒ‘œ–³‚µ",
+            "text" => "Š³ŽÒ‘œ–³"
+          ],
+          [
+            "type" => "message",
+            "label" => "’†”NˆÈ~‚Ì—«",
+            "text" => "’†”NˆÈ~—«"
+          ],
+          [
+            "type" => "message",
+            "label" => "50ÎˆÈã‚Ì—«",
+            "text" => "50ÎˆÈã—«"
+          ]
+      ]
+    ]
+  ];
+//‘¤“ª•”‚Ìˆ³k
+
+//4060‚ŒŒˆ³
+} else if ($text == '4060‚ŒŒˆ³') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "4060‚ŒŒˆ³",
+    "template" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "title" => "4060‚ŒŒˆ³",
+      "text" => "•t‚·‚éÇó‚Í?",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "ˆ«SEšq“f^ˆÓŽ¯áŠQ^‘ƒÇó(-)",
+            "text" => "A1"
+          ],
+          [
+            "type" => "message",
+            "label" => "ˆÓŽ¯áŠQ^ˆ«SEšq“f",
+            "text" => "A2"
+          ],
+          [
+            "type" => "message",
+            "label" => "Ž‹–ìEŽ‹—ÍáŠQ^–Ñ—l[ŒŒ^‘ÎŒõ”½ŽËÁŽ¸",
+            "text" => "A3"
+          ],
+          [
+            "type" => "message",
+            "label" => "‘¤“ª•”‚Ì“{’£^‘ÌŠ²‹Ø“÷’É^‘ÌdŒ¸­",
+            "text" => "A4"
+          ]
+      ]
+    ]
+  ];
+//4060‚ŒŒˆ³
+
+//Š³ŽÒ‘œ–³
+} else if ($text == 'Š³ŽÒ‘œ–³') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "Š³ŽÒ‘œ–³",
+    "template" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "title" => "Š³ŽÒ‘œ–³",
+      "text" => "•t‚·‚éÇó‚Í?",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "ˆ«SEšq“f^ˆÓŽ¯áŠQ^‘ƒÇó(-)",
+            "text" => "A1"
+          ],
+          [
+            "type" => "message",
+            "label" => "ˆÓŽ¯áŠQ^ˆ«SEšq“f",
+            "text" => "A2"
+          ],
+          [
+            "type" => "message",
+            "label" => "Ž‹–ìEŽ‹—ÍáŠQ^–Ñ—l[ŒŒ^‘ÎŒõ”½ŽËÁŽ¸",
+            "text" => "A3"
+          ],
+          [
+            "type" => "message",
+            "label" => "‘¤“ª•”‚Ì“{’£^‘ÌŠ²‹Ø“÷’É^‘ÌdŒ¸­",
+            "text" => "A4"
+          ]
+      ]
+    ]
+  ];
+//Š³ŽÒ‘œ–³
+
+//’†”NˆÈ~—«
+} else if ($text == '’†”NˆÈ~—«') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "’†”NˆÈ~—«",
+    "template" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "title" => "’†”NˆÈ~—«",
+      "text" => "•t‚·‚éÇó‚Í?",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "ˆ«SEšq“f^ˆÓŽ¯áŠQ^‘ƒÇó(-)",
+            "text" => "A1"
+          ],
+          [
+            "type" => "message",
+            "label" => "ˆÓŽ¯áŠQ^ˆ«SEšq“f",
+            "text" => "A2"
+          ],
+          [
+            "type" => "message",
+            "label" => "Ž‹–ìEŽ‹—ÍáŠQ^–Ñ—l[ŒŒ^‘ÎŒõ”½ŽËÁŽ¸",
+            "text" => "A3"
+          ],
+          [
+            "type" => "message",
+            "label" => "‘¤“ª•”‚Ì“{’£^‘ÌŠ²‹Ø“÷’É^‘ÌdŒ¸­",
+            "text" => "A4"
+          ]
+      ]
+    ]
+  ];
+//’†”NˆÈ~—«
+
+//50ÎˆÈã—«
+} else if ($text == '50ÎˆÈã—«') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "50ÎˆÈã—«",
+    "template" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "title" => "50ÎˆÈã—«",
+      "text" => "•t‚·‚éÇó‚Í?",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "ˆ«SEšq“f^ˆÓŽ¯áŠQ^‘ƒÇó(-)",
+            "text" => "A1"
+          ],
+          [
+            "type" => "message",
+            "label" => "ˆÓŽ¯áŠQ^ˆ«SEšq“f",
+            "text" => "A2"
+          ],
+          [
+            "type" => "message",
+            "label" => "Ž‹–ìEŽ‹—ÍáŠQ^–Ñ—l[ŒŒ^‘ÎŒõ”½ŽËÁŽ¸",
+            "text" => "A3"
+          ],
+          [
+            "type" => "message",
+            "label" => "‘¤“ª•”‚Ì“{’£^‘ÌŠ²‹Ø“÷’É^‘ÌdŒ¸­",
+            "text" => "A4"
+          ]
+      ]
+    ]
+  ];
+//50ÎˆÈã—«
+
+//ƒCƒ“ƒvƒŒƒbƒVƒ‡ƒ“
+} else if ($text == 'A1') {
 	  $response_format_text = [
 		    	"type" => "text",
-			"text" => "1st Impressionã¯ã€ãã‚‚è†œä¸‹å‡ºè¡€ã€‘ã§ã™ã€‚è©³ç´°ã¯ã€Œãƒ¬ãƒ“ãƒ¥ãƒ¼ãƒ–ãƒƒã‚¯å†…ç§‘ãƒ»å¤–ç§‘2016-2017ã€ã®J-15ã‚’å‚ç…§ãã ã•ã„ã€‚
+			"text" => "1st Impression‚Íy‚­‚à–Œ‰ºoŒŒz‚Å‚·BÚ×‚ÍuƒŒƒrƒ…[ƒuƒbƒN“à‰ÈEŠO‰È2016-2017v‚ÌJ-15‚ðŽQÆ‚­‚¾‚³‚¢B
 https://www.medilink-study.com/products/detail.php?product_id=12"
 			];
-//æœ€åˆã®ãƒ¬ã‚¹ãƒãƒ³ã‚¹
-}  else if ($text == 'è³ªå•' or $text == 'ã‚¤ãƒ³ãƒ—ãƒ¬ãƒƒã‚·ãƒ§ãƒ³' or $text == 'ã‚¤ãƒ³ãƒ—ãƒ¬ãƒƒã‚·ãƒ§ãƒ³ãŒçŸ¥ã‚ŠãŸã„') {
+} else if ($text == 'A2') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impression‚Íy”]‰Šz‚Å‚·BÚ×‚ÍuƒŒƒrƒ…[ƒuƒbƒN“à‰ÈEŠO‰È2016-2017v‚ÌJ-35‚ðŽQÆ‚­‚¾‚³‚¢B
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+} else if ($text == 'A3') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impression‚Íy‹}«—Î“àá”­ìz‚Å‚·BÚ×‚ÍuƒŒƒrƒ…[ƒuƒbƒN“à‰ÈEŠO‰È2016-2017v‚ðŽQÆ‚­‚¾‚³‚¢B
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+} else if ($text == 'A4') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impression‚Íy‘¤“ª“®–¬‰Šz‚Å‚·BÚ×‚ÍuƒŒƒrƒ…[ƒuƒbƒN“à‰ÈEŠO‰È2016-2017v‚ÌJ-32‚ðŽQÆ‚­‚¾‚³‚¢B
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}  else if ($text == 'Ž¿–â' or $text == 'ƒCƒ“ƒvƒŒƒbƒVƒ‡ƒ“' or $text == 'ƒCƒ“ƒvƒŒƒbƒVƒ‡ƒ“‚ª’m‚è‚½‚¢') {
   $response_format_text = [
     "type" => "template",
-    "altText" => "ã‚¤ãƒ³ãƒ—ãƒ¬ãƒƒã‚·ãƒ§ãƒ³ãŒçŸ¥ã‚ŠãŸã„ï¼Ÿï¼ˆã¯ã„ï¼ã„ã„ãˆï¼‰",
+    "altText" => "ƒCƒ“ƒvƒŒƒbƒVƒ‡ƒ“‚ª’m‚è‚½‚¢Hi‚Í‚¢^‚¢‚¢‚¦j",
     "template" => [
         "type" => "confirm",
-        "text" => "ã‚¤ãƒ³ãƒ—ãƒ¬ãƒƒã‚·ãƒ§ãƒ³ãŒçŸ¥ã‚ŠãŸã„ï¼Ÿ",
+        "text" => "ƒCƒ“ƒvƒŒƒbƒVƒ‡ƒ“‚ª’m‚è‚½‚¢H",
         "actions" => [
             [
               "type" => "message",
-              "label" => "ã¯ã„",
-              "text" => "ã¯ã„"
+              "label" => "‚Í‚¢",
+              "text" => "‚Í‚¢"
             ],
             [
               "type" => "message",
-              "label" => "ã„ã„ãˆ",
-              "text" => "ã„ã„ãˆ"
+              "label" => "‚¢‚¢‚¦",
+              "text" => "‚¢‚¢‚¦"
             ]
         ]
     ]
